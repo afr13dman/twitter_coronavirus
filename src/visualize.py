@@ -37,7 +37,8 @@ plt.ylabel("Count")
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
     plt.title("Number of Times" + args.key + "Appear in Tweets by Country")
+    plt.savefig('country' + args.key + '.png')
 elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
     plt.title("Number of Times" + args.key + "Appear in Tweets by Language")
-plt.savefig('plot'+args.input_path+args.key, dpi='figure', format='PNG')
+    plt.savefig('lang' + args.key + '.png')

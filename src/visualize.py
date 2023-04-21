@@ -30,15 +30,15 @@ for k,v in items:
     print(k,':',v)
 
 # plot bar graphs
-x_axis = [item[0] for item in items[:9]]
-y_axis = [item[1] for item in items[:9]]
+x_axis = [item[0] for item in sorted(items[:9])]
+y_axis = [item[1] for item in sorted(items[:9])]
 plt.bar(x_axis, y_axis)
 plt.ylabel("Count")
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
-    plt.title("Number of Times" + args.key + "Appear in Tweets by Country")
+    plt.title("Number of Times " + args.key + " Appears in Tweets from 2020 by Country")
     plt.savefig('country' + args.key + '.png')
 elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
-    plt.title("Number of Times" + args.key + "Appear in Tweets by Language")
+    plt.title("Number of Times " + args.key + " Appears in Tweets from 2020 by Language")
     plt.savefig('lang' + args.key + '.png')

@@ -30,10 +30,16 @@ for k,v in items:
     print(k,':',v)
 
 # plot bar graphs
-x_axis = [item[0] for item in items[:10]]
-y_axis = [item[1] for item in items[:10]]
-print(len(x_axis), len(y_axis))
-plt.bar(x_axis, sorted(y_axis))
+items = items[0:10]
+items.reverse()
+x_axis = [item[0] for item in items]
+y_axis = [item[1] for item in items]
+
+x_axis2 = range(len(x_axis))
+plt.bar(x_axis2, y_axis)
+plt.xticks(x_axis2, x_axis)
+# print(x_axis)
+# print(y_axis)
 plt.ylabel("Count")
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
@@ -43,3 +49,4 @@ elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
     plt.title("Number of Times " + args.key + " Appears in Tweets from 2020 by Language")
     plt.savefig('lang' + args.key + '.png')
+# install font that works with asian characters for title issue or just put it the readme

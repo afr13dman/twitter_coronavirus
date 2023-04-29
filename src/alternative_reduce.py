@@ -5,8 +5,6 @@
 # 2. The x-axis is the day of the year.
 # 3. The y-axis is the number of tweets that use that hashtag during the year.
 
-# Then, after you have extracted this information, you should call the appropriate matplotlib functions to plot the data.
-
 # command line args
 import argparse
 parser = argparse.ArgumentParser()
@@ -25,15 +23,15 @@ import matplotlib.pyplot as plt
 # load each of the input paths
 total = defaultdict(lambda: Counter())
 for path in args.input_paths:
-    date = '20' + re.search(r'\d{2}-\d{2}-\d{2}', path).group()
+    date = re.search(r'\d{2}-\d{2}-\d{2}', path).group()[3:]
     with open(path) as f:
         tmp = json.load(f)
-        for k in tmp:
-            if k in args.keys:
-                counts = 0
+        for k in args.keys:
+            counts = 0
+            if k in tmp:
                 for i in tmp[k]:
                     counts += tmp[k][i]
-                total[k][date] = counts
+            total[k][date] = counts
 
 # creates readable dictionary
 data = json.dumps(total)
@@ -46,18 +44,12 @@ if args.percent:
 
 # plot graph
 for k in args.keys:
-    #print(k)
-    #print(data[k].items())
-    items = sorted(data[k].items(), key=lambda item: (item[1],item[0]), reverse=True)
-    #print(items)
+    items = list(data[k].items())
     x_axis = [item[0] for item in items]
     y_axis = [item[1] for item in items]
-    print(x_axis)
-    print(y_axis)
-    print()
     plt.plot(x_axis, y_axis, label = k)
 plt.legend()
 plt.ylabel("Count")
-plt.xlabel("Days in 2020")
-plt.title("Title")
-plt.savefig("test_alt_reduce.png")
+plt.xlabel("Day of the Year in 2020")
+plt.title("Number of Tweets Using COVID-19 Related Hashtags in 2020")
+plt.savefig("test_alt_reduce7.png")

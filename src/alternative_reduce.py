@@ -7,11 +7,12 @@
 
 # command line args
 import argparse
+import glob
 parser = argparse.ArgumentParser()
-parser.add_argument('--input_paths',nargs='+',required=True)  # can i have this as an input path or am i supposed to hard code so that it looks at the outputs folder that end in LANG (we are doing that)
 parser.add_argument('--keys',nargs='+',required=True)
 parser.add_argument('--percent',action='store_true')
 args = parser.parse_args()
+args.input_paths = glob.glob('outputs/geoTwitter*.lang')
 
 # imports
 import os
@@ -19,11 +20,12 @@ import json
 from collections import Counter,defaultdict
 import re
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 # load each of the input paths
 total = defaultdict(lambda: Counter())
 for path in args.input_paths:
-    date = re.search(r'\d{2}-\d{2}-\d{2}', path).group()[3:]
+    date = '20' + re.search(r'\d{2}-\d{2}-\d{2}', path).group()
     with open(path) as f:
         tmp = json.load(f)
         for k in args.keys:
@@ -44,12 +46,13 @@ if args.percent:
 
 # plot graph
 for k in args.keys:
-    items = list(data[k].items())
-    x_axis = [item[0] for item in items]
+    items = sorted(list(data[k].items()))
+    x_axis = [datetime.strptime(item[0], '%Y-%m-%d') for item in items]
     y_axis = [item[1] for item in items]
     plt.plot(x_axis, y_axis, label = k)
+
 plt.legend()
 plt.ylabel("Count")
 plt.xlabel("Day of the Year in 2020")
 plt.title("Number of Tweets Using COVID-19 Related Hashtags in 2020")
-plt.savefig("test_alt_reduce7.png")
+plt.savefig("test_alt_year18.png")

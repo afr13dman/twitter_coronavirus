@@ -26,8 +26,7 @@ if args.percent:
 # print the count values
 items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=True)
 for k,v in items:
-    pass
-    # print(k,':',v)
+    print(k,':',v)
 
 # plot bar graphs
 items = items[0:10]
@@ -43,9 +42,9 @@ plt.ylabel("Count")
 
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
-    plt.title("Number of Times Specified Hashtag Appears in Tweets from 2020 by Country")
+    plt.title("Number of Tweets Using Specified Hashtag in 2020 by Country")
     plt.savefig('country' + args.key + '.png')
 elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
-    plt.title("Number of Times Specified Hashtag Appears in Tweets from 2020 by Language")
+    plt.title("Number of Tweets Using Specified Hashtag in 2020 by Language")
     plt.savefig('lang' + args.key + '.png')

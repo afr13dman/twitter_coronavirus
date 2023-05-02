@@ -29,11 +29,6 @@ for k,v in items:
     pass
     # print(k,':',v)
 
-# set up font that works with chinese characters
-font_name = "STKaiti"
-plt.rcParams['font.family']=font_name
-plt.rcParams['axes.unicode_minus']=False
-
 # plot bar graphs
 items = items[0:10]
 items.reverse()
@@ -48,10 +43,9 @@ plt.ylabel("Count")
 
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
-    plt.title("Number of Times " + args.key + " Appears in Tweets from 2020 by Country")
+    plt.title("Number of Times Specified Hashtag Appears in Tweets from 2020 by Country")
     plt.savefig('country' + args.key + '.png')
 elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
-    plt.title("Number of Times " + args.key + " Appears in Tweets from 2020 by Language")
+    plt.title("Number of Times Specified Hashtag Appears in Tweets from 2020 by Language")
     plt.savefig('lang' + args.key + '.png')
-# install font that works with asian characters for title issue or just put it the readme

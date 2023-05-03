@@ -10,9 +10,7 @@ The goal of this assignment was to scan all geotagged tweets sent in 2020 to mon
 1. use the MapReduce divide-and-conquer paradigm to create parallel code
 -->
 
-## Background
-
-**About the Data:**
+## About the Data 
 
 The lambda server's `/data/Twitter dataset` folder contains all geotagged tweets that were sent in 2020.
 That is, tweets that includes the user location from where it was sent.
@@ -73,7 +71,7 @@ and the `--key` was set to either `#coronavirus` or `#코로나바이러스`.
 
 ### Tweets Using #코로나바이러스 by Language
 
-<img src=lang%23코로나바이러스.png title="Testing Title" /> 
+<img src=lang%23코로나바이러스.png /> 
 
 ## Alternative Reduce
 

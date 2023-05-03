@@ -22,7 +22,7 @@ The tweets for each day are stored in a zip file `geoTwitterYY-MM-DD.zip`,
 and inside this zip file are 24 text files, one for each hour of the day.
 Each text file contains a single tweet per line in JSON format, a popular format for storing data that is closely related to python dictionaries.
 
-## The Project / Programming Steps
+## The Project and Programming Steps
 
 I used a [MapReduce](https://en.wikipedia.org/wiki/MapReduce) procedure to analyze these tweets.
 
@@ -57,6 +57,7 @@ $ ./src/reduce.py --input_paths outputs/geoTwitter*.country --output_path=reduce
 ```
 
 **Visualize**
+
 In the `visualize.py` file, I used the matplotlib library to generate bar graphs of the results and store them as a png file.
 For each graph, the horizontal axis was the keys of the input file, and the vertical axis were the values of the input file.
 The results were sorted from low to high and only the top 10 keys were printed.
@@ -68,21 +69,25 @@ $ ./src/visualize.py --input_path=PATH --key=HASHTAG
 where `--input_path` equaled either the country or lang files created in the reduce phase,
 and the `--key` was set to either `#coronavirus` or `#코로나바이러스`.
 
-**Plots**
+## Plots
 
 Tweets Using #coronavirus by Country
+
 <img src=country#coronavirus.png width=100% /> 
 
 Tweets Using #coronavirus by Language
+
 <img src=lang#coronavirus.png width=100% /> 
 
 Tweets Using #코로나바이러스 by Country
+
 <img src=country#코로나바이러스.png width=100% /> 
 
 Tweets Using #코로나바이러스 by Language
+
 <img src=lang#코로나바이러스.png width=100% /> 
 
-**Alternative Reduce**
+## Alternative Reduce
 
 In addition to the normal map reduce, I did an alternative reduce process where I took as input on the command line a list of hashtags,
 and output a line plot where:

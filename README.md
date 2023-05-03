@@ -59,24 +59,21 @@ and the `--key` was set to either `#coronavirus` or `#코로나바이러스`.
 
 ## Plots
 
-Tweets Using #coronavirus by Country
+### Tweets Using #coronavirus by Country
 
-![](https://github.com/afr13dman/twitter_coronavirus/blob/master/country%23coronavirus.png)
-<img src='country#coronavirus.png' width=100% /> 
+<img src=country%23coronavirus.png /> 
 
-Tweets Using #coronavirus by Language
+### Tweets Using #coronavirus by Language
 
-![Title](https://github.com/afr13dman/twitter_coronavirus/blob/master/lang%23coronavirus.png)
+<img src=lang%23coronavirus.png /> 
 
-<img src="lang%23coronavirus.png" width=100% /> 
+### Tweets Using #코로나바이러스 by Country
 
-Tweets Using #코로나바이러스 by Country
+<img src=country%23코로나바이러스.png /> 
 
-<img src='country#코로나바이러스.png' width=100% /> 
+### Tweets Using #코로나바이러스 by Language
 
-Tweets Using #코로나바이러스 by Language
-
-<img src='lang#코로나바이러스'.png width=100% /> 
+<img src=lang%23코로나바이러스.png title="Testing Title" /> 
 
 ## Alternative Reduce
 

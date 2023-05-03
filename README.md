@@ -27,9 +27,7 @@ Each text file contains a single tweet per line in JSON format, a popular format
 I used a [MapReduce](https://en.wikipedia.org/wiki/MapReduce) procedure to analyze these tweets.
 
 The file `map.py` processed all of the tweets within each inputed zip file while tracking the usage of of the hashtags on both a language and country level.
-For each day it outputs two files, one that ends in .lang for the language dictionary, and one that ends in .country for the country dictionary.
-
-The format of both files is the same: it contains a dictionary of dictionaries. 
+For each day it outputs two files (a `.lang` and a `.country`) that contain a dictionary of dictionaries.
 The outermost dictionary has hashtags as the keys, and the innermost dictionary has languages or country as the keys, respectively. 
 
 Since there are 366 days, or files, worth of data, I created a shell script to loop over each in the dataset and run the map.py command on that file.
@@ -49,8 +47,8 @@ $ ./src/reduce.py --input_paths outputs/geoTwitter*.country --output_path=reduce
 ```
 
 Next, in the `visualize.py` file, I used the matplotlib library to generate bar graphs of the results and store them as a png file.
-For each graph, the horizontal axis was the keys of the input file, and the vertical axis were the values of the input file.
-The results were sorted from low to high and only the top 10 keys were printed.
+For each graph, the horizontal axis was the top 10 keys of the input file, and the vertical axis were the values of the input file.
+The results were sorted from low to high.
 
 I generated four plots using the following command four times:
 ```
@@ -75,7 +73,7 @@ Tweets Using #코로나바이러스 by Country
 
 Tweets Using #코로나바이러스 by Language
 
-<img src='lang#코로나바이러스.png' width=100% /> 
+<img src='lang#코로나바이러스'.png width=100% /> 
 
 ## Alternative Reduce
 

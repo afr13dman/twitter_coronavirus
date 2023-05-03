@@ -61,11 +61,12 @@ and the `--key` was set to either `#coronavirus` or `#코로나바이러스`.
 
 Tweets Using #coronavirus by Country
 
+[][https://github.com/afr13dman/twitter_coronavirus/blob/master/country%23coronavirus.png]
 <img src='country#coronavirus.png' width=100% /> 
 
 Tweets Using #coronavirus by Language
 
-<img src='lang#coronavirus.png' width=100% /> 
+<img src="lang#coronavirus.png" width=100% /> 
 
 Tweets Using #코로나바이러스 by Country
 

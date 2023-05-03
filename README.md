@@ -66,7 +66,9 @@ Tweets Using #coronavirus by Country
 
 Tweets Using #coronavirus by Language
 
-<img src="lang#coronavirus.png" width=100% /> 
+![Title](https://github.com/afr13dman/twitter_coronavirus/blob/master/lang%23coronavirus.png)
+
+<img src="lang%23coronavirus.png" width=100% /> 
 
 Tweets Using #코로나바이러스 by Country
 

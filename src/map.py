@@ -16,23 +16,19 @@ from collections import Counter,defaultdict
 
 # load keywords
 hashtags = [
-    '#코로나바이러스',  # korean
-    '#コロナウイルス',  # japanese
-    '#冠状病毒',        # chinese
-    '#covid2019',
-    '#covid-2019',
-    '#covid19',
-    '#covid-19',
-    '#coronavirus',
-    '#corona',
-    '#virus',
-    '#flu',
-    '#sick',
-    '#cough',
-    '#sneeze',
-    '#hospital',
-    '#nurse',
-    '#doctor',
+    '#russia',
+    '#ukraine',
+    '#putin',
+    '#zelensky',
+    '#war',
+    '#россия', # russian
+    '#Украина', # russian
+    '#росія', # ukrainian
+    '#Україна', # ukrainian
+    '#NATO',
+    '#invasion',
+    '#kviv',
+    '#moscow',
     ]
 
 # initialize counters

@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--keys',nargs='+',required=True)
 parser.add_argument('--percent',action='store_true')
 args = parser.parse_args()
-args.input_paths = glob.glob('outputs/geoTwitter*.lang')
+args.input_paths = glob.glob('outputs/*.lang')
 
 # imports
 import os
@@ -25,7 +25,12 @@ from datetime import datetime
 # load each of the input paths
 total = defaultdict(lambda: Counter())
 for path in args.input_paths:
-    date = '20' + re.search(r'\d{2}-\d{2}-\d{2}', path).group()
+    try:
+        date = '20' + re.search(r'\d{2}-\d{2}-\d{2}', path).group()
+    except AttributeError: 
+        d = re.search(r'\d{8}', path).group()
+        date = '-'.join([d[:4], d[4:6], d[6:]])
+
     with open(path) as f:
         tmp = json.load(f)
         for k in args.keys:

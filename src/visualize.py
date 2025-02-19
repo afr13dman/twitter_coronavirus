@@ -42,9 +42,9 @@ plt.ylabel("Count")
 
 if args.input_path == "reduced.country":
     plt.xlabel("Countries (Top 10)")
-    plt.title("Number of Tweets Using Specified Hashtag in 2020 by Country")
+    plt.title("Number of Tweets Using Specified Hashtag in 2022 by Country")
     plt.savefig('country' + args.key + '.png')
 elif args.input_path == "reduced.lang":
     plt.xlabel("Languages (Top 10)")
-    plt.title("Number of Tweets Using Specified Hashtag in 2020 by Language")
+    plt.title("Number of Tweets Using Specified Hashtag in 2022 by Language")
     plt.savefig('lang' + args.key + '.png')

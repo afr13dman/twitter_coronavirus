@@ -1,0 +1,1 @@
+{"#war": {"ID": 1, "IN": 1, "IE": 1}, "_all": {"ID": 1, "IN": 1, "GB": 1, "IE": 2, "UA": 2, "SA": 1, "US": 3, "TR": 1, "TH": 1, "DE": 3}, "#ukraine": {"GB": 1, "IE": 1, "UA": 2, "US": 2, "TR": 1, "TH": 1, "DE": 1}, "#russia": {"SA": 1, "DE": 1}, "#zelensky": {"US": 1, "DE": 1}}

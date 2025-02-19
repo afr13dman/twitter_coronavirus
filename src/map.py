@@ -21,10 +21,6 @@ hashtags = [
     '#putin',
     '#zelensky',
     '#war',
-    '#россия', # russian
-    '#Украина', # russian
-    '#росія', # ukrainian
-    '#Україна', # ukrainian
     '#NATO',
     '#invasion',
     '#kviv',
@@ -52,18 +48,40 @@ with zipfile.ZipFile(args.input_path) as archive:
                 tweet = json.loads(line)
 
                 # convert text to lower case
-                text = tweet['text'].lower()
+                # since the tweets are saved in two different structures, implement a try except so it works for both
+                try:
+                    text = tweet['text'].lower()
+                except KeyError:
+                    text = tweet['data']['text'].lower()
 
                 # search hashtags
                 for hashtag in hashtags:
-                    lang = tweet['lang']
+
+                    # set language of tweet
+                    try:
+                        lang = tweet['lang']
+                    except KeyError:
+                        lang = tweet['data']['lang']
+                    
+                    # for each hashtag in the text
                     if hashtag in text:
                         counter_lang[hashtag][lang] += 1
-                        if tweet['place']:
-                            if tweet['place']['country_code']:
-                                country = tweet['place']['country_code']
-                                counter_country[hashtag][country] += 1
-                                counter_country['_all'][country] += 1
+
+                        try:
+                            if tweet['place']:
+                                if tweet['place']['country_code']:
+                                    country = tweet['place']['country_code']
+                                    counter_country[hashtag][country] += 1
+                                    counter_country['_all'][country] += 1
+                        except KeyError:
+                            try:
+                                if tweet['includes']['places']:
+                                    if tweet['includes']['places'][0]['country_code']:
+                                        country = tweet['includes']['places'][0]['country_code']
+                                        counter_country[hashtag][country] += 1
+                                        counter_country['_all'][country] += 1
+                            except KeyError:
+                                pass
                     counter_lang['_all'][lang] += 1
 
 # open the outputfile

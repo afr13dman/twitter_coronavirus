@@ -1,7 +1,7 @@
-# Coronavirus twitter analysis
+# Russia-Ukraine twitter analysis
 
 Since I complete this assignment in CS46, I am re-running it but with a different timeline and set of hashtags. 
-The new goal is to scan all geotagged tweets sent in 2022 to monitor for the spread of information regarding Russia's invasion of Ukraine on social media.
+The new goal is to scan all geotagged tweets sent in 2022 to monitor for the spread of information regarding Russia's invasion of Ukraine and the subsequent Russia-Ukraine war on social media.
 Through this project, I gained skills to work with large scale datasets, work with multilingual text, and use the MapReduce divide-and-conquer paradigm to create parallel code
 
 ## About the Data 

@@ -72,6 +72,10 @@ and output a line plot where:
 The `alternative_reduce.py` file combines parts of `reduce.py` and `visualize.py`.
 First, the file scans through the data in the `outputs` folder to construct a dataset from which to plot the data.
 
+Using the command,
+```
+./src/alternative_reduce.py --keys '#putin' '#zelensky' '#war'
+```
 I plotted the frequency of tweets including `#putin`, `#zelensky`, and `#war` during 2022.
 
 <img src=year_hashtag_graph.png width=100% />

@@ -58,6 +58,6 @@ for k in args.keys:
 
 plt.legend()
 plt.ylabel("Count")
-plt.xlabel("Day of the Year in 2020")
-plt.title("Number of Tweets Using COVID-19 Related Hashtags in 2020")
+plt.xlabel("Day of the Year in 2022")
+plt.title("Number of Tweets Using COVID-19 Related Hashtags in 2022")
 plt.savefig("year_hashtag_graph.png")
